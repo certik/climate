@@ -5,5 +5,3 @@
 '0.708', '0.792', '0.875', '0.958']
 
 * Move all data files into the data/ folder
-
-* Merge with master
