@@ -1,0 +1,9 @@
+* Interpolate years using:
+
+>>> ["%.3f" % (i/12. + 1/24.) for i in range(12)]
+['0.042', '0.125', '0.208', '0.292', '0.375', '0.458', '0.542', '0.625',
+'0.708', '0.792', '0.875', '0.958']
+
+* Move all data files into the data/ folder
+
+* Merge with master
