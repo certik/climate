@@ -5,3 +5,11 @@
 '0.708', '0.792', '0.875', '0.958']
 
 * Move all data files into the data/ folder
+
+* Investigate the role of averaging twice (e.g. "month->year->10 years" vs.
+  "month->10 years"). It seems to produce different results. The problem seems
+  to be how to properly average yearly data on a monthly grid --- should we
+  average over 10*12 points, or only 10 points? The answer seems 10*12 points,
+  to take into account the 10 year average, but then it seems that it is
+  averaged more than it should be. So we should plot this and create a nice
+  notebook that clarifies the issue.
