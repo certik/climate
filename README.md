@@ -19,6 +19,7 @@ machine.
 
 * [Berkeley Fit](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Berkeley%2520fit.ipynb)
 * [Temperature Data](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Temperature%2520Data.ipynb)
+* [Sea Ice Index](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Sea%2520Ice%2520Index.ipynb)
 
 ## Motivation
 
