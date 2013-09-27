@@ -17,6 +17,7 @@ links below. When you're ready to develop or run the code yourself, pull the
 source for this GitHub repository and execute the notebooks on your own
 machine.
 
+* [Satellite Temperature (RSS)](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/RSS.ipynb)
 * [Berkeley Fit](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Berkeley%2520fit.ipynb)
 * [Temperature Data](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Temperature%2520Data.ipynb)
 * [Sea Ice Index](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Sea%2520Ice%2520Index.ipynb)
