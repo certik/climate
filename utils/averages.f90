@@ -1,6 +1,9 @@
 module averages
 use types, only: dp
 use constants, only: pi
+implicit none
+private
+public arit
 
 contains
 

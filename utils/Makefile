@@ -18,7 +18,7 @@ F90FLAGS += -g -fbounds-check
 
 PROG = libaverages.a
 
-OBJS = averages.o constants.o types.o
+OBJS = caverages.o averages.o constants.o types.o
 
 all: $(PROG)
 
@@ -32,5 +32,6 @@ clean:
 	$(F90) $(F90FLAGS) -c $<
 
 averages.o: types.o constants.o
+caverages.o: averages.o
 utils.o: types.o
 constants.o: types.o
