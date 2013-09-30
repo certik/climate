@@ -21,12 +21,14 @@ PROG = libaverages.a
 OBJS = caverages.o averages.o constants.o types.o
 
 all: $(PROG)
+	cd lib; make
 
 $(PROG): $(OBJS)
 	ar rcs $@ $(OBJS)
 
 clean:
 	rm -f $(PROG) $(OBJS) *.mod
+	cd lib; make clean
 
 %.o: %.f90
 	$(F90) $(F90FLAGS) -c $<
