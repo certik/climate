@@ -16,8 +16,8 @@ def arit(ndarray[double, mode="c"] longitude not None,
 
 def arit2(ndarray[double, mode="c"] longitude not None,
         ndarray[double, mode="c"] latitude not None,
-        ndarray[double, ndim=2, mode="fortran"] field not None,
-        ndarray[int, ndim=2, mode="fortran"] mask not None):
+        ndarray[double, ndim=2, mode="c"] field not None,
+        ndarray[int, ndim=2, mode="c"] mask not None):
     cdef int n_long = len(longitude)
     cdef int n_lat = len(latitude)
     cdef double r

@@ -46,7 +46,7 @@ do i = 1, size(field, 2)
 end do
 print *, "tmp = ", tmp
 print *, "tmp_mask = ", tmp_mask
-r = sum(tmp*w, mask=tmp_mask)
+r = sum(tmp*w, mask=tmp_mask) / sum(w, mask=tmp_mask)
 end function
 
 end module
