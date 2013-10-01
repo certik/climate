@@ -16,7 +16,7 @@ logical, intent(in) :: mask(:, :)
 real(dp) :: w(size(field, 1), size(field, 2))
 w = spread(cos(latitude*pi/180), 1, size(longitude))
 w = w / sum(w)
-r = sum(field*w, mask=mask)
+r = sum(field*w, mask=mask) / sum(w, mask=mask)
 end function
 
 real(dp) function arit2(longitude, latitude, field, mask) result(r)
@@ -30,10 +30,6 @@ integer :: tmp2(size(mask, 1)), n
 logical :: tmp_mask(size(mask, 2))
 integer :: i
 w = sin(pi/144) * cos(latitude*pi/180)
-print *, "sum w =", sum(w)
-print *, "debug mask", mask(:, 50)
-print *, "latitude = ", latitude
-print *, "w = ", w
 tmp2 = 1
 do i = 1, size(field, 2)
     n = sum(tmp2, mask=mask(:, i))
@@ -44,8 +40,6 @@ do i = 1, size(field, 2)
         tmp_mask(i) = .true.
     end if
 end do
-print *, "tmp = ", tmp
-print *, "tmp_mask = ", tmp_mask
 r = sum(tmp*w, mask=tmp_mask) / sum(w, mask=tmp_mask)
 end function
 
