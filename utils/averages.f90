@@ -29,8 +29,9 @@ real(dp) :: tmp(size(mask, 2)), w(size(mask, 2))
 integer :: tmp2(size(mask, 1)), n
 logical :: tmp_mask(size(mask, 2))
 integer :: i
-w = cos(latitude*pi/180)
-w = w / sum(w)
+w = sin(pi/144) * cos(latitude*pi/180)
+print *, "sum w =", sum(w)
+print *, "debug mask", mask(:, 50)
 print *, "latitude = ", latitude
 print *, "w = ", w
 tmp2 = 1
