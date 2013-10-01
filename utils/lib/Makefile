@@ -1,6 +1,6 @@
 all: averages_wrapper.so
 
-averages_wrapper.so: averages_wrapper.o
+averages_wrapper.so: averages_wrapper.o ../libaverages.a
 	g++ -shared -o averages_wrapper.so averages_wrapper.o -L.. -laverages -lgfortran
 
 averages_wrapper.o: averages_wrapper.cpp

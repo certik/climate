@@ -25,11 +25,27 @@ real(dp) function arit2(longitude, latitude, field, mask) result(r)
 ! longitude is [-180, 180], latitude is [-90, 90]
 real(dp), intent(in) :: longitude(:), latitude(:), field(:, :)
 logical, intent(in) :: mask(:, :)
-real(dp) :: w(size(field, 1), size(field, 2))
-w = spread(cos(latitude*pi/180), 1, size(longitude))
+real(dp) :: tmp(size(mask, 2)), w(size(mask, 2))
+integer :: tmp2(size(mask, 1)), n
+logical :: tmp_mask(size(mask, 2))
+integer :: i
+w = cos(latitude*pi/180)
 w = w / sum(w)
-print *, w(1, 1), w(2, 1), w(1, 2)
-r = sum(field*w, mask=mask)
+print *, "latitude = ", latitude
+print *, "w = ", w
+tmp2 = 1
+do i = 1, size(field, 2)
+    n = sum(tmp2, mask=mask(:, i))
+    if (n == 0) then
+        tmp_mask(i) = .false.
+    else
+        tmp(i) = sum(field(:, i), mask=mask(:, i)) / n
+        tmp_mask(i) = .true.
+    end if
+end do
+print *, "tmp = ", tmp
+print *, "tmp_mask = ", tmp_mask
+r = sum(tmp*w, mask=tmp_mask)
 end function
 
 end module
