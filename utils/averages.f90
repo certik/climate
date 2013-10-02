@@ -3,7 +3,7 @@ use types, only: dp
 use constants, only: pi
 implicit none
 private
-public arit, arit2, rmean
+public arit, arit2, rmean, smean
 
 contains
 
@@ -30,6 +30,19 @@ real(dp) :: w(size(field, 1), size(field, 2))
 w = spread(cos(latitude*pi/180), 1, size(longitude))
 w = w / sum(w)
 m = (sum(field**r * w, mask=mask) / sum(w, mask=mask))**(1/r)
+end function
+
+real(dp) function smean(longitude, latitude, field, mask, s) result(m)
+! field is (long, lat), mask is the same shape,
+! only .true. elements will be considered
+! longitude is [-180, 180], latitude is [-90, 90]
+real(dp), intent(in) :: longitude(:), latitude(:), field(:, :)
+logical, intent(in) :: mask(:, :)
+real(dp), intent(in) :: s
+real(dp) :: w(size(field, 1), size(field, 2))
+w = spread(cos(latitude*pi/180), 1, size(longitude))
+w = w / sum(w)
+m = log(sum(exp(s*field) * w, mask=mask) / sum(w, mask=mask)) / s
 end function
 
 real(dp) function arit2(longitude, latitude, field, mask) result(r)

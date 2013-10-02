@@ -3,7 +3,7 @@ all: averages_wrapper.so
 averages_wrapper.so: averages_wrapper.o ../libaverages.a
 	g++ -shared -o averages_wrapper.so averages_wrapper.o -L.. -laverages -lgfortran
 
-averages_wrapper.o: averages_wrapper.cpp
+averages_wrapper.o: averages_wrapper.cpp ../caverages.h
 	g++ -O2 -fPIC -I$(PYTHONHPC)/include/python2.7 -I../ -o averages_wrapper.o -c averages_wrapper.cpp
 
 averages_wrapper.cpp: caverages.pxd averages_wrapper.pyx
