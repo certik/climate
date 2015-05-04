@@ -22,6 +22,7 @@ machine.
 * [Berkeley Fit](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Berkeley%2520fit.ipynb)
 * [Temperature Data](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Temperature%2520Data.ipynb)
 * [Sea Ice Index](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Sea%2520Ice%2520Index.ipynb)
+* [Sea Ice Index Arctic](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Sea%2520Ice%2520Index%2520Arctic.ipynb)
 * [Temperature Fits Reproduction](http://nbviewer.ipython.org/urls/raw.github.com/certik/climate/master/Temperature%2520Fits%2520Reproduction.ipynb)
 * [Sea Level Trend New York City](http://nbviewer.ipython.org/github/certik/climate/blob/master/Sea%20Level%20Trend%20New%20York%20City.ipynb)
 
